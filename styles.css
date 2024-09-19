@@ -1,0 +1,198 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #270404;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.pikachu {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  animation: move 10s linear infinite paused; 
+}
+
+.body {
+  width: 80px;
+  height: 120px;
+  background-color: yellow;
+  border-color: rgb(5, 5, 5);
+  border-radius: 50%;
+  position: relative;
+}
+
+
+.head {
+  width: 70px;
+  height: 70px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: 5px;
+  z-index: 1;
+}
+
+
+.ear {
+  width: 15px;
+  height: 50px;
+  background-color: yellow;
+  position: absolute;
+  border-radius: 10px;
+  z-index: 0;
+}
+
+.ear.left {
+  transform: rotate(-30deg);
+  top: -45px;
+  left: -5px;
+  background-color: yellow;
+  border-top: 20px solid black; 
+}
+
+.ear.right {
+  transform: rotate(30deg);
+  top: -45px;
+  right: -5px;
+  background-color: yellow;
+  border-top: 20px solid black; 
+}
+
+
+.tail {
+  width: 40px;
+  height: 10px;
+  background-color: yellow;
+  position: absolute;
+  top: 70px;
+  left: 60px;
+  transform: rotate(30deg);
+  transform-origin: left center;
+  animation: tail-wag 0.5s linear infinite;
+  background-color: yellow;
+  border-right: 10px solid #e5b800; 
+}
+
+.eye {
+  width: 12px;
+  height: 12px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+}
+
+.eye.left {
+  left: 12px;
+}
+
+.eye.right {
+  right: 12px;
+}
+
+.eye::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 3px;
+}
+
+
+.mouth {
+  width: 25px;
+  height: 12px;
+  border-bottom: 3px solid red;
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  top: 40px;
+  left: 22px;
+}
+
+ */
+.cheek {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  top: 35px;
+}
+
+.cheek.left {
+  left: 5px;
+}
+
+.cheek.right {
+  right: 5px;
+}
+
+
+@keyframes move {
+  from {
+      left: -100px;
+  }
+  to {
+      left: 100vw;
+  }
+}
+
+@keyframes tail-wag {
+  0%, 100% {
+      transform: rotate(30deg);
+  }
+  50% {
+      transform: rotate(60deg);
+  }
+}
+
+
+.controls {
+  position: fixed;
+  bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  background-color: #ffcc00;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #e5b800;
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
